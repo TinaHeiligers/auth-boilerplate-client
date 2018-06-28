@@ -4,8 +4,8 @@ import { combineReducers } from 'redux-immutable';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga';
 import { immutableRouterForBrowser } from 'redux-little-router/es/immutable';
-import reducers from '../redux/rootReducers'; // TODO add root reducers
-import rootSaga from '../redux/rootSagas'; // TODO add root sagas
+import reducers from '../redux/rootReducers';
+import rootSaga from '../redux/rootSagas';
 
 export default function () {
   // any data to attach to the router key of state when we're on this route

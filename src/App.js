@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-
+import { GoogleLogin } from 'react-google-login';
+import axios from 'axios';
+import { push, replace } from 'redux-little-router';
+import { ImmutableFragment } from 'redux-little-router/es/immutable';
+import Help from './Help';
 // These styled items can be moved to another folder, extended and shared.
 const AppMainDiv = styled.div`
   text-align: center;
@@ -35,10 +39,6 @@ const LoginButton = styled.button`
 `
 
 class App extends Component {
-  login = (e) => {
-    e.preventDefault();
-    console.log(`Login Button Clicked! (e):`, e)
-  }
   render() {
     return (
       <AppMainDiv>
@@ -51,8 +51,11 @@ class App extends Component {
         </AppP>
         <div>
           Log in to see more
-          <LoginButton type='LoginButton' onClick={this.login}>Log In</LoginButton>
+           <a href="http://localhost:4000/auth/google">Please work.</a>
         </div>
+        <ImmutableFragment forRoute='/help'>
+          <Help />
+        </ImmutableFragment>
       </AppMainDiv>
     );
   }
